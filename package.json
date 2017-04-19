@@ -1,6 +1,7 @@
 {
   "name": "ionic2-elastic-header",
-  "version": "0.0.9",
+  "version": "0.0.10",
+  "description": "Directive for Ionic 2 and Ionic 3 to cause headers to shrink and reveal.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "./build.sh",

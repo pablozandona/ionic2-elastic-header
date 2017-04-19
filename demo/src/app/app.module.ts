@@ -2,7 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { MyList } from '../pages/myList/myList';
-import { ElasticHeaderModule } from "ionic2-elastic-header";
+import { BrowserModule } from "@angular/platform-browser";
+import { ElasticHeaderModule } from "ionic2-elastic-header/dist";
 
 @NgModule({
   declarations: [
@@ -10,8 +11,9 @@ import { ElasticHeaderModule } from "ionic2-elastic-header";
     MyList
   ],
   imports: [
+    ElasticHeaderModule,
+    BrowserModule,
     IonicModule.forRoot(MyApp),
-    ElasticHeaderModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

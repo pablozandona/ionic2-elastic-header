@@ -1,11 +1,11 @@
 <!--Add the elastic-header attribute-->
-<ion-header [elastic-header]="myContent">
+<ion-header [elasticHeader]="myContent">
   <ion-navbar>
     <ion-title>My List</ion-title>
   </ion-navbar>
 </ion-header>
 <!--Add the fullscreen attribute-->
-<ion-content class="home" fullscreen>
+<ion-content class="home" fullscreen #myContent>
   <ion-list>
     <ion-item *ngFor="let item of items">
       <ion-icon name="person" item-left></ion-icon>

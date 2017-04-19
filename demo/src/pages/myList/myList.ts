@@ -9,7 +9,9 @@ import {Content} from 'ionic-angular';
 export class MyList {
 
   //add the elastic-header value
-  @ViewChild(Content) myContent: Content;
+
+  // @ViewChild(Content) myContent: Content;
+
   items: any;
 
   constructor() {

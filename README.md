@@ -20,7 +20,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { MyList } from '../pages/myList/myList';
-import { ElasticHeaderModule } from "ionic2-elastic-header";
+import { ElasticHeaderModule } from "ionic2-elastic-header/dist";
 
 @NgModule({
   declarations: [
@@ -43,8 +43,9 @@ export class AppModule {}
 
 ## Usage
 
-* Add `elastic-header` attribute in `<ion-header>`;
 * Add `fullscreen` attribute in `<ion-content>`;
+* Assign a  `#ioncontentID` attribute in `<ion-content>`;
+* Add `elastic-header` attribute in `<ion-header>`, and assign with value of your #ioncontentID;
 
 ### myList.html
 
@@ -55,8 +56,8 @@ export class AppModule {}
     <ion-title>My List</ion-title>
   </ion-navbar>
 </ion-header>
-<!--Add the fullscreen attribute-->
-<ion-content class="home" fullscreen>
+<!--Add the fullscreen attribute and #<componentID> -->
+<ion-content class="home" fullscreen #myContent>
   <ion-list>
     <ion-item *ngFor="let item of items">
       <ion-icon name="person" item-left></ion-icon>
@@ -64,34 +65,6 @@ export class AppModule {}
     </ion-item>
   </ion-list>
 </ion-content>
-```
-
-### myList.ts
-
-* Add value to elastic-header child in your class;
-
-```typescript
-import {Component, ViewChild} from '@angular/core';
-import {Content} from 'ionic-angular';
-
-@Component({
-  selector: 'myList',
-  templateUrl: 'myList.html'
-})
-
-export class MyList {
-
-  //add the elastic-header value
-  @ViewChild(Content) myContent: Content;
-  items: any;
-
-  constructor() {
-    this.items = [];
-    for(let i=0; i < 50; i++) {
-      this.items.push({ name: `Person ${i}`})
-    }
-  }
-}
 ```
 
 ## Licence

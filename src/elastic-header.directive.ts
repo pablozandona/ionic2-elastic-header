@@ -1,12 +1,12 @@
-import {Directive, ElementRef, Renderer, Input} from '@angular/core';
-import {Content} from "ionic-angular";
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Content } from 'ionic-angular';
 
 @Directive({
-  selector: '[elastic-header]'
+  selector: '[elasticHeader]'
 })
-export class ElasticHeader {
+export class ElasticHeaderDirective {
 
-  scrollerHandle: any;
+  scrollHandle: any;
   header: any;
   headerHeight: any;
   translateAmt: any = 0;
@@ -14,16 +14,16 @@ export class ElasticHeader {
   lastScrollTop: any;
   opacity: any = 1;
 
-  @Input('elastic-header') content: Content;
+  @Input('elasticHeader') content: Content;
 
-  constructor(public element: ElementRef, public renderer: Renderer) {
-  }
+  constructor(public element: ElementRef, public renderer: Renderer2) {}
 
-  ngOnInit(){
-    this.scrollerHandle = this.content;
+  ngOnInit() {
+    this.scrollHandle = this.content;
+
     this.header = this.element.nativeElement;
     this.headerHeight = this.header.clientHeight;
-    this.renderer.setElementStyle(this.header, 'webkitTransformOrigin', 'center bottom');
+    this.renderer.setStyle(this.header, 'webkitTransformOrigin', 'center bottom');
 
     this.content.ionScroll.subscribe(($event: any) => {
       window.requestAnimationFrame(() => {
@@ -36,13 +36,13 @@ export class ElasticHeader {
     }, false);
   }
 
-  updateElasticHeader(){
+  updateElasticHeader() {
 
     let result;
-    this.scrollTop = this.scrollerHandle.scrollTop;
+    this.scrollTop = this.scrollHandle.scrollTop;
 
-    if(this.lastScrollTop <= this.scrollTop) {
-      if(this.translateAmt >= (-this.headerHeight)) {
+    if (this.lastScrollTop <= this.scrollTop) {
+      if (this.translateAmt >= (-this.headerHeight)) {
         this.translateAmt -= (this.scrollTop - this.lastScrollTop) / 4;
       } else {
         this.translateAmt = -this.headerHeight - 12;
@@ -50,16 +50,18 @@ export class ElasticHeader {
       }
 
     } else {
-      if(this.translateAmt < 0) {
+      if (this.translateAmt < 0) {
         result = this.translateAmt + (this.lastScrollTop - this.scrollTop) / 4;
-        if(result > 0) result = 0;
+        if (result > 0) {
+          result = 0;
+        }
         this.translateAmt = result;
       } else {
         this.translateAmt = 0;
       }
     }
 
-    this.renderer.setElementStyle(this.header, 'webkitTransform', 'translate3d(0,'+this.translateAmt+'px,0)');
+    this.renderer.setStyle(this.header, 'webkitTransform', 'translate3d(0,' + this.translateAmt + 'px,0)');
     this.lastScrollTop = this.scrollTop;
 
   }

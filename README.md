@@ -1,6 +1,6 @@
 # ionic2-elastic-header
 
-***ionic2-elastic-header*** is a directive for Ionic 2 to cause headers to shrink and reveal.
+***ionic2-elastic-header*** is a directive for Ionic 2 and Ionic 3 to cause headers to shrink and reveal.
 
 ![demo](demo.gif)
 

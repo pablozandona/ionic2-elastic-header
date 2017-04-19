@@ -1,18 +1,40 @@
-.idea/
-.vscode/
-.project/
-node_modules/
-typings/
-src/
-demo/
+# Node
+node_modules/*
+npm-debug.log
 
-demo.gif
-.npmignore
+build.sh
+.travis.yml
+.yo-rc.json
+watch.js
+.gitignore
 
-*.log
-*.tgz
+# DO NOT IGNORE TYPESCRIPT FILES FOR NPM
+# TypeScript
+# *.js
+# *.map
+# *.d.ts
 
-gulpfile.js
-tslint.json
-tsconfig.json
-typings.json
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+# VS Code
+.vscode/*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+**/.DS_Store
+
+# Ngc generated files
+**/*.ngfactory.ts
+
+# Library files
+src
+build

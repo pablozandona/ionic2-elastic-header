@@ -1,0 +1,27 @@
+{
+  "name": "ionic2-elastic-header",
+  "version": "0.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablozandona/ionic2-elastic-header"
+  },
+  "author": {
+    "name": "Pablo Zandoná",
+    "email": "pablozandona@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pablozandona/ionic2-elastic-header/issues"
+  },
+  "module": "ionic2-elastic-header.js",
+  "typings": "ionic2-elastic-header.d.ts",
+  "peerDependencies": {
+    "ionic-angular": "^3.0.0",
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.3.0",
+    "zone.js": "^0.8.4"
+  }
+}

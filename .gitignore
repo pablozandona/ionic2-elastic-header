@@ -1,15 +1,32 @@
-.idea/
-.vscode/
-.project/
-node_modules/
-typings/
-dist/
+# Node
+node_modules/*
+npm-debug.log
 
-*.log
-*.tgz
+# TypeScript
+src/*.js
+src/*.map
+src/*.d.ts
 
-*.js.map
-*.js
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
 
-*.log
-*.tgz
+# VS Code
+.vscode/*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+**/.DS_Store
+
+# Ngc generated files
+**/*.ngfactory.ts
+
+# Build files
+dist/*

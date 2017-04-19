@@ -1,24 +1,20 @@
 {
   "name": "ionic2-elastic-header",
-  "version": "0.0.8",
-  "description": "Directive for Ionic 2 to cause headers to shrink and reveal.",
-  "author": "Pablo Zandoná <pablozandona@gmail.com>",
-  "license": "ISC",
+  "version": "0.0.9",
   "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
   "scripts": {
-    "lint": "tslint **/*.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ngc": "ngc",
-    "build": "rm -rf dist && npm run ngc",
-    "publishPackage": "npm run build && npm publish"
+    "build": "./build.sh",
+    "build:watch": "node ./watch.js",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "test": "tsc && karma start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pablozandona/ionic2-elastic-header.git"
+    "url": "https://github.com/pablozandona/ionic2-elastic-header"
   },
-  "bugs": {
-    "url": "https://github.com/pablozandona/ionic2-elastic-header/issues"
+  "author": {
+    "name": "Pablo Zandoná",
+    "email": "pablozandona@gmail.com"
   },
   "keywords": [
     "header",
@@ -35,23 +31,42 @@
     "angular2",
     "directive"
   ],
-  "devDependencies": {
-    "@angular/common": "2.4.8",
-    "@angular/compiler": "2.4.8",
-    "@angular/compiler-cli": "2.4.8",
-    "@angular/core": "2.4.8",
-    "@angular/forms": "2.4.8",
-    "@angular/http": "2.4.8",
-    "@angular/platform-browser": "2.4.8",
-    "@angular/platform-browser-dynamic": "2.4.8",
-    "@angular/platform-server": "2.4.8",
-    "ionic-angular": "2.2.0",
-    "ionic-native": "2.8.1",
-    "rxjs": "5.0.1",
-    "sw-toolbox": "3.4.0",
-    "zone.js": "0.7.2",
-    "typescript": "2.0.3"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pablozandona/ionic2-elastic-header/issues"
   },
-  "homepage": "https://github.com/pablozandona/ionic2-elastic-header#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/compiler-cli": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~2.0.0",
+    "core-js": "^2.4.1",
+    "ionic-angular": "^3.0.0",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "node-watch": "^0.5.2",
+    "protractor": "~5.1.0",
+    "rollup": "^0.41.6",
+    "rxjs": "^5.3.0",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0",
+    "zone.js": "^0.8.4"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
 }

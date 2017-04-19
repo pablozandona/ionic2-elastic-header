@@ -1,24 +1,17 @@
+// This file is only used to configure the editor during development.
+// It is NOT used for building the library.
 {
   "compilerOptions": {
-    "noImplicitAny": false,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
+    "baseUrl": "./src",
     "experimentalDecorators": true,
-    "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
-    "removeComments": true,
-    "sourceMap": true,
-    "target": "es6"
-  },
-  "files": [
-      "src/elastic-header.directive.ts",
-    "src/elastic-header.module.ts",
-    "src/index.ts"
-
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "rootDir": "./src",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    // Don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
+    "types": []
+  }
 }

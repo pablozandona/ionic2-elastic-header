@@ -45,13 +45,13 @@ export class AppModule {}
 
 * Add `fullscreen` attribute in `<ion-content>`;
 * Assign a  `#ioncontentID` attribute in `<ion-content>`;
-* Add `elastic-header` attribute in `<ion-header>`, and assign with value of your #ioncontentID;
+* Add `elasticHeader` attribute in `<ion-header>`, and assign with value of your #ioncontentID;
 
 ### myList.html
 
 ```html
 <!--Add the elastic-header attribute-->
-<ion-header [elastic-header]="myContent">
+<ion-header [elasticHeader]="myContent">
   <ion-navbar>
     <ion-title>My List</ion-title>
   </ion-navbar>
